@@ -23,14 +23,5 @@ jobs:
           aws-secret-access-key: VihgCQr5+SiJ0Jl4jRE4hAZs9Gjm0DMVt/QDx7hQ
           aws-region: eu-west-1
 
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        run: terraform plan
-
       - name: Terraform destroy
         run: terraform destroy -auto-approve
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
