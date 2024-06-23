@@ -27,17 +27,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        id: plan
-        run: |
-          terraform plan -out=tfplan
-          base64 tfplan > tfplan.b64
-          echo "TF_PLAN=$(cat tfplan.b64)" >> $GITHUB_ENV
+        run: terraform plan
 
       - name: Terraform Apply
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          echo "$TF_PLAN" | base64 --decode > tfplan
-          terraform apply -auto-approve tfplan
-
-      - name: Terraform Apply
-        run: terraform
+        run: terraform apply
