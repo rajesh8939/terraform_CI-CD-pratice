@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "eu-west-1" {
-    bucket = "new"
+    bucket = "new-89396862"
 }
