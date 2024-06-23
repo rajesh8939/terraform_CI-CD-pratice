@@ -23,5 +23,8 @@ jobs:
           aws-secret-access-key: VihgCQr5+SiJ0Jl4jRE4hAZs9Gjm0DMVt/QDx7hQ
           aws-region: eu-west-1
 
-      - name: Terraform destroy
-        run: terraform destroy -auto-approve
+      - name: Terraform Init
+        run: terraform init
+
+      -name: Terraform Destroy
+       run: terraform destroy
